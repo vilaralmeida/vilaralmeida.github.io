@@ -1,1 +1,80 @@
-Hello World
+<html>
+<header>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<style>
+#container {
+	min-width: 320px;
+	max-width: 600px;
+	margin: 0 auto;
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var myChart =Highcharts.chart('container', {
+  chart: {
+    type: 'packedbubble',
+    height: '100%'
+  },
+  title: {
+    text: 'Relevância das Ideias por Etapa na Inovacao'
+  },
+  tooltip: {
+    useHTML: true,
+    pointFormat: 'Ideia <b>{point.id}:</b> {point.name}'
+  },
+  plotOptions: {
+    packedbubble: {
+      minSize: '1%',
+      maxSize: '300%',
+      zMin: 0,
+      zMax: 1000,
+      layoutAlgorithm: {
+        splitSeries: false,
+        gravitationalConstant: 0.02
+      },
+      dataLabels: {
+        enabled: true,
+        format: '{point.name}',
+        filter: {
+          property: 'y',
+          operator: '>',
+          value: 250
+        },
+        style: {
+          color: 'black',
+          textOutline: 'none',
+          fontWeight: 'normal'
+        }
+      }
+    }
+  },
+  series: [{
+    name: 'Industrializacao',
+    data: [{"id":155,"name":"Strategic Sourcing Analytics","value":26.1319},{"id":215,"name":"Isaac - O Robô Analista da MP 871","value":39.8137},{"id":85,"name":"Cidadão  360 - Autor: Fabiano Soares Martins de Alencar","value":49.1431}] 
+  }, {
+    name: 'Arquivada',
+    data: [{"id":164,"name":"Unidades de Teste, Homologação e Performance","value":6.3098},{"id":121,"name":"Criação de Rotina para Atender Serviço de Rating dos Consignados para o Mercado","value":37.7724},{"id":93,"name":"Projeto Esplanada – Uber do Setor Público - Autor: Fernando da Silva Costa","value":15.4382},{"id":54,"name":"Aprimoramento da Comunicação e Análise de Acidente de Trabalho - CAT - Autor: Antonio Francisco Corno","value":16.2725},{"id":70,"name":"Rede de Medicamentos - Autor: João Carlos Tosta dos Santos","value":29.0326}] 
+  }, {
+    name: 'Avaliacao',
+    data: [{"id":194,"name":"Identificar áreas do país com crescimento e envelhecimento problemático","value":10.6805},{"id":55,"name":"SUS - Fácil - Autor: Marcio Gomes de Araujo","value":17.1518},{"id":113,"name":"eVacinas - Autor: Antonio Hobmeir Neto","value":24.7921},{"id":117,"name":"Aplicativo de Apoiamento em Projeto de Lei de Iniciativa Popular - Autor: Gilberto Almeida de Souza","value":10.1329},{"id":72,"name":"Consignado Validado - Autor: Fabricio Miranda Gomes","value":23.521},{"id":129,"name":"Pacote de ferramentas colaborativas para a DTP e clientes","value":12.5073},{"id":146,"name":"DBCopy - Cópias rápidas de BD para testes e prospecção","value":7.0102},{"id":114,"name":"NepoHunter - Autor: Diénert de Alencar Vieira","value":12.5073},{"id":86,"name":"Infogov - Autor: Decio Benício Costa dos Santos","value":18.0787},{"id":79,"name":"Cartório Eleitoral Fácil - Autor: Eduardo Gusmão de Gouveia Nóbrega","value":8.2093},{"id":116,"name":"AnaliseSeusDados - Autor: ANA CLAUDIA VASCONCELOS RODRIGUES","value":22.3151},{"id":59,"name":"Meus Investimentos  - Autor: Francisco Wagner Costa Aquino","value":5.1119},{"id":97,"name":"DEPOSITO INSS CONFERIDO - Autor: MAURO MORAIS DE FARIA","value":26.1319},{"id":91,"name":"Engravidei! - Aplicativo-guia da gestante para obtenção do salário maternidade - Autor: Italo Soares de Oliveira Lima","value":23.521},{"id":74,"name":"Autoatendimento Cidadão - Autor: SUELEN DOURADO DE CARVALHO TOLEDO","value":15.4382},{"id":73,"name":"Tudo OK! /Tudo OK Empresa! - Autor: Bernard Correa Pereira","value":10.1329},{"id":56,"name":"GM (Gov-Messenger) - Autor: Ricardo Camargo Barioni","value":21.171},{"id":66,"name":"Meu Trabalho - Autor: Leonardo Rebouças de Carvalho","value":13.1833},{"id":101,"name":"Eficiência é o Melhor Remédio - Autor: Reinaldo de Carvalho Silva","value":20.0855},{"id":144,"name":"Busca de dados de antepassados imigrantes","value":11.8661},{"id":150,"name":"e-Vacinação","value":20.0855},{"id":75,"name":"PEPS - Portal de Execução de Políticas Sociais - Autor: Rodrigo Carvalho Aniceto","value":14.6466},{"id":142,"name":"Cidadão Drive","value":19.0557},{"id":134,"name":"Registro de ponto utilizando a identificação biométrica","value":6.3098},{"id":81,"name":"Identifique.BR - Autor: ielton de melo gonçalves","value":18.0787},{"id":124,"name":"Obra.Legal - Autor: MARCOS DANTAS BARROS","value":15.4382},{"id":69,"name":"Base de conhecimento para eficiência no sistema de benefícios (SIBE) - Autor: JOSE FRANCISCO BARBOSA NETO","value":21.171},{"id":145,"name":"Documentos de Visão Inteligentes: Uso de tecnologia cognitiva para confecção dos DVs","value":15.4382},{"id":57,"name":"Atendimento do cidadão por Beacons - Autor: Adriano Patrick do Nascimento Cunha","value":18.0787},{"id":94,"name":"Help Tube - Autor: André Jackson Gomes Bessa","value":4.8498},{"id":105,"name":"Painel de Gestão dos Hemocentros Brasileiros (PGHB) - Autor: JOSÉ JUDSON MESQUITA SOUSA CUNHA","value":11.8661},{"id":60,"name":"Meu Painel Único de Informações do Governo do Brasil  - MeuPainelGovBR - Autor: Marco Antonio Munhoz da Silva","value":24.7921},{"id":109,"name":"INSS cada vez mais perto de você - Autor: Daniel Xavier Araújo","value":20.0855},{"id":92,"name":"Mudou? - Autor: Alexandre Costa Martins","value":8.2093},{"id":108,"name":"Contagem Contribuição INSS - Autor: Thiago Ismael da Silva","value":17.1518},{"id":95,"name":"DTP VerificaDOc (\"Verificado\") - Autor: Carlos Alberto Batista de Queiroz Filho","value":9.1205},{"id":132,"name":"Sistemas com regras de negócio dinâmicas","value":20.0855},{"id":137,"name":"Aviso de registro de ponto mobile","value":3.9291},{"id":65,"name":"PocketAPS - Autor: Cícero Alves Barreto Neto","value":11.8661},{"id":143,"name":"Avalia.BR: Serviço de Avaliação de Satisfação de Serviços Públicos","value":10.1329},{"id":152,"name":"Templates para criação de currículo profissional e acadêmico","value":14.6466},{"id":98,"name":"Agente de Saúde Pessoal - Autor: Francisco Henrique de Oliveira","value":10.1329},{"id":148,"name":"Agri BR","value":29.0326},{"id":158,"name":"Agendamento de serviços Públicos utilizando geolocalização","value":51.7989},{"id":128,"name":"Utilizar certificados webtrust da Let's Encrypt","value":6.3098},{"id":67,"name":"Aposenta Rápido - Autor: Afonso Bezerra Lima Neto","value":11.8661},{"id":63,"name":"USO DE INTELIGÊNCIA COGNITIVA PARA  VALIDAÇÃO DA MACIÇA - Autor: MAGNUS ALENCAR DA CRUZ","value":5.3882},{"id":106,"name":"aprendaRapido - Autor: Daniel Augusto de Abreu Mascena","value":11.8661},{"id":77,"name":"Previdência a Distância - Autor: Ulysses Rangel Ribeiro","value":20.0855},{"id":78,"name":"Usando algoritmos matemático-estatísticos para tornar agendamentos mais eficientes - Autor: Jose Armando Barbosa Filho","value":10.1329},{"id":119,"name":"Sistema cognitivo de consulta de legislação previdenciária - Autor: JOSE FELIPE RIBEIRO ARAUJO","value":26.1319},{"id":140,"name":"MTb-CNISBROKER","value":8.6529},{"id":96,"name":"Inteligência cognitiva para apoio na qualificação de dados da CTPS - Autor: Carlos Manoel Tabosa da Costa","value":20.0855},{"id":151,"name":"A Cidade Demanda","value":37.7724},{"id":127,"name":"Caderneta Digital de Prevenção da Saúde - Autor: Valhodir Vieira Junior","value":26.1319},{"id":103,"name":"RenegociaBrasil - Renegociação de Dívidas Previdenciárias - Autor: Vinicius de Araujo Porto","value":26.1319},{"id":88,"name":"Economia Solidária Digital - Autor: Francisco Breno Barbosa Soares","value":11.2577},{"id":90,"name":"24Horas - Autor: ALLAN CHAMON FIGUEIREDO","value":11.2577},{"id":71,"name":"InfraBot - ChatBot para suporte às RDMs - Autor: Antonio Kleyson Prado Pereira","value":12.5073},{"id":83,"name":"SAUCC - Sistema de Agendamento Unificado da Central do Cidadão - Autor: Luciano Rocha da Silva","value":10.1329},{"id":99,"name":"Sisbest - Sistema de Análise de Custos de Benefícios Relacionados à Saúde do Trabalhador - Autor: Carlos David RIbeiro Pasco","value":24.7921},{"id":133,"name":"DtpStore","value":10.1329},{"id":201,"name":"Gestor de Vulnerabilidade Físico-Social  do Cidadão usando Machine Learning","value":9.6134},{"id":102,"name":"Dotô - Autor: MAURO FERNANDO DE HOLANDA BELTRAO FILHO","value":19.0557},{"id":123,"name":"INTELIGÊNCIA PARA TRABALHO SEGURO - Autor: TIAGO VIEIRA DE MELO","value":22.3151},{"id":204,"name":"Modelo de NLP em português BR com as regras de negócio da Dataprev (Python Javascript)","value":7.3891},{"id":84,"name":"Job Matcher: Encaminhamentos Inteligentes via SINE - Autor: Aliandro Higino Guedes Lima","value":23.521},{"id":115,"name":"Perícia Fácil  - Autor: Andre Luiz Teixeira de Carvalho Nunes","value":16.2725},{"id":58,"name":"Jovem Aprendiz - Autor: Mauro Fiorin Junior","value":14.6466},{"id":138,"name":"Senha Já","value":13.8957},{"id":220,"name":"Transformar o pFacil na plataforma de contagem do Governo Federal","value":15.4382},{"id":62,"name":"Middleware de dados abertos conectados na Dataprev - Autor: Wagner Gomes do Amaral","value":6.3098}] 
+  }, {
+    name: 'Evolucao',
+    data: [{"id":139,"name":"Detecção de anomalias baseada em comportamento","value":27.5441},{"id":125,"name":"Bolsa Monitor  - Autor: Aline de Araújo Alencar Carneiro","value":33.9985},{"id":118,"name":"Prova de Vida - Autor: Adriano Alves Dodó","value":46.6235}] 
+  }, {
+    name: 'Ideacao',
+    data: [{"id":80,"name":"Fraude Zero - Autor: Tuan Diniz Miranda","value":26.1319},{"id":178,"name":"Alerta Previdência","value":17.1518},{"id":181,"name":"INSS - BPC Fraude Zero - Cancelamento Automático do Benefício de Prestação Continuada (BPC)","value":19.0557},{"id":200,"name":"Avaliação de risco para concessão de benefícios no INSS Digital","value":33.9985},{"id":203,"name":"\"Fraudômetro\" - Quanto a Dataprev economizou para  o país?","value":18.0787}] 
+  }, {
+    name: 'Pausada',
+    data: [{"id":64,"name":"Melhores Vagas de Emprego - Autor: Fulvio Figueiroa Silvestre","value":27.5441},{"id":110,"name":"Roberta - Sua assistente virtual do INSS - Autor: David Motta Guerra","value":46.6235},{"id":162,"name":"SineBOT - O MTb perto de você!","value":49.1431},{"id":82,"name":"PREVI responde - Autor: Letícia Duarte Moreira dos Santos Hartmann","value":23.521},{"id":153,"name":"Evolução do www-kba (Knowledge Based Authentication)","value":29.0326},{"id":135,"name":"e-Atestado Médico","value":33.9985}] 
+  }]
+});
+});
+</script>
+</header>
+<body>
+<div id="container"></div>
+</body>
+
+</html>
